@@ -1,8 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head><title>Form Processor Activity</title></head>
+<head>
+  <title>Form Processor</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
 <body>
-  <h3>Form Processor Custom Activity</h3>
-  <p>No configuration needed. This activity automatically calls Cloud Page 2.</p>
+  <p>Form Processor Activity — No configuration required.</p>
+ 
+  <script>
+    var connection = new window.parent.postMessage
+    
+    // Tell Journey Builder activity is ready and configured
+    window.addEventListener('message', function(event) {
+      var data = event.data;
+      
+      if (data.type === 'requestedContent') {
+        window.parent.postMessage({
+          type: 'requestedContent',
+          data: { isConfigured: true }
+        }, '*');
+      }
+ 
+      if (data.type === 'validate') {
+        window.parent.postMessage({
+          type: 'validate',
+          data: { isConfigured: true }
+        }, '*');
+      }
+    });
+ 
+    // On load tell JB activity is ready
+    window.parent.postMessage({
+      type: 'ready'
+    }, '*');
+  </script>
 </body>
 </html>
