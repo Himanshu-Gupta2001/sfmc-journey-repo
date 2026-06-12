@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/config.json", "destination": "/public/config.json" },
+    { "source": "/",            "destination": "/public/index.html"  }
+  ]
+}
