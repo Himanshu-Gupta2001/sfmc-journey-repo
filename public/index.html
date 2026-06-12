@@ -2,37 +2,33 @@
 <html>
 <head>
   <title>Form Processor</title>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-  <p>Form Processor Activity — No configuration required.</p>
- 
+  <p>Ready</p>
   <script>
-    var connection = new window.parent.postMessage
-    
-    // Tell Journey Builder activity is ready and configured
+    function init() {
+      window.parent.postMessage({ type: 'ready' }, '*');
+    }
+ 
     window.addEventListener('message', function(event) {
-      var data = event.data;
-      
-      if (data.type === 'requestedContent') {
+      var payload = event.data;
+ 
+      if (payload.type === 'requestedContent') {
         window.parent.postMessage({
           type: 'requestedContent',
-          data: { isConfigured: true }
-        }, '*');
-      }
- 
-      if (data.type === 'validate') {
-        window.parent.postMessage({
-          type: 'validate',
-          data: { isConfigured: true }
+          data: {
+            isConfigured: true,
+            arguments: {
+              execute: {
+                inArguments: [{}]
+              }
+            }
+          }
         }, '*');
       }
     });
  
-    // On load tell JB activity is ready
-    window.parent.postMessage({
-      type: 'ready'
-    }, '*');
+    init();
   </script>
 </body>
 </html>
