@@ -1,7 +1,7 @@
 {
   "workflowApiVersion": "1.1",
   "metaData": {
-    "icon": "https://YOUR_APP_URL.vercel.app/icon.png",
+    "icon": "https://sfmc-journey-repo.vercel.app/icon.png",
     "category": "custom"
   },
   "type": "REST",
@@ -16,7 +16,7 @@
       "inArguments": [
         { "CFP_PK": "" }
       ],
-      "url": "https://YOUR_APP_URL.vercel.app/api/execute",
+      "url": "https://sfmc-journey-repo.vercel.app/api/execute",
       "timeout": 10000,
       "retryCount": 2,
       "retryDelay": 1000,
@@ -24,13 +24,13 @@
     }
   },
   "configurationArguments": {
-    "publish":  { "url": "https://YOUR_APP_URL.vercel.app/api/publish" },
-    "validate": { "url": "https://YOUR_APP_URL.vercel.app/api/validate" },
-    "stop":     { "url": "https://YOUR_APP_URL.vercel.app/api/stop" }
+    "publish":  { "url": "https://sfmc-journey-repo.vercel.app/api/publish" },
+    "validate": { "url": "https://sfmc-journey-repo.vercel.app/api/validate" },
+    "stop":     { "url": "https://sfmc-journey-repo.vercel.app/api/stop" }
   },
   "userInterfaces": {
     "configModal": {
-      "url": "https://YOUR_APP_URL.vercel.app/",
+      "url": "https://sfmc-journey-repo.vercel.app/",
       "height": 200,
       "width": 400
     }
