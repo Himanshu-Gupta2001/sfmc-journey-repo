@@ -28,11 +28,4 @@
     "validate": { "url": "https://sfmc-journey-repo.vercel.app/api/validate" },
     "stop":     { "url": "https://sfmc-journey-repo.vercel.app/api/stop" }
   },
-  "userInterfaces": {
-    "configModal": {
-      "url": "https://sfmc-journey-repo.vercel.app/",
-      "height": 200,
-      "width": 400
-    }
-  }
 }
